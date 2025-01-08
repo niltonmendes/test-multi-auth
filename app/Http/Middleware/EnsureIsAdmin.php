@@ -11,7 +11,7 @@ class EnsureIsAdmin
 
     public function handle(Request $request, Closure $next): Response
     {
-        if (!Auth()->check() || !auth()->user()->isAdmin()) {
+        if (!auth()->check() || !auth()->user()->isAdmin()) {
             return redirect()->route('dashboard');
         }
 
